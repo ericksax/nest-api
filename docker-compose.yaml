@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+
+  nestjs-app:
+    build: .
+    restart: always
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      - db 
+    command: sh -c 'npx prisma migrate dev && npm run start:dev'
+
+  db: 
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+  
+
+    
+  

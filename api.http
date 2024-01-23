@@ -1,0 +1,26 @@
+GET http://localhost:3000/users
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "name": "Erick",
+    "password": "123456",
+    "email": "erickfreitas@gmail.com"
+}
+###
+GET http://localhost:3000/users/1e4d48d2-2ae5-4415-991b-d0649d84ffe1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWNrZnJlaXRhc0BnbWFpbC5jb20iLCJpYXQiOjE3MDYwNDgzMDQsImV4cCI6MTcwNjA1MTkwNCwic3ViIjoiNTliYzRjZmYtMjFkOS00NWMxLTlmZmItNjE0MzBiODcyYzVhIn0.7GGOrPTlJeEKT8bpE9CDlrZhIt4rF-dgd4d481u2JHo
+
+###
+DELETE http://localhost:3000/users/633bf8a3-b5ae-4642-8816-66a30cebc1ce
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "erickfreitas@gmail.com",
+    "password": "123456"
+}
